@@ -1,0 +1,42 @@
+#%RAML 1.0
+title: calculator-exp-api
+version: v1
+description: this api is used to perform some math operations
+protocols: [HTTP,HTTPS]
+mediaType: 
+- application/json
+traits:
+  error: !include traits/trait.raml
+  query: !include traits/trait.raml
+/addition:
+  get:
+    is: [error, query]
+    responses:
+      200:
+        body:
+         example: !include Examples/addition-response.json            
+/subtraction:
+  post:
+    is: [error, query]
+    responses:
+      200:
+        body:
+          example: !include Examples/subtraction-response.json
+/division:
+  put:
+    is: [error, query]
+    responses:
+      200:
+        body:
+          example: !include Examples/division-response.json
+/multiplication:
+  delete:
+    is: [error, query]
+    responses:
+      200:
+        body:
+          example: !include Examples/multiplication-response.json
+      
+                                
+                                
+                                        

@@ -1,0 +1,24 @@
+#%RAML 1.0 Trait
+
+responses:
+  400:
+      body:
+        application/json:
+            example: {"Message" : "Bad Request"}
+  500:
+    description: |
+          Internal server error
+
+queryParameters:
+      number1:
+        required: true
+        type: integer
+        example: 10
+        minimum: 1
+        maximum: 12
+      number2:
+        required: true
+        type: integer
+        example: 13
+        minimum: 1
+        maximum: 14          
